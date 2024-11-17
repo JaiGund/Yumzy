@@ -57,7 +57,7 @@ const updateStatus = async (req, res) => {
 
 const getUserAddress = async (req, res) => {
   try {
-    const userId = req.user.id; // Assuming `authMiddleware` adds user info to `req.user`
+    const userId = req.body.userId; // Assuming `authMiddleware` adds user info to `req.user`
 
     // Find the most recent order by `userId`
     const order = await orderModel.findOne({ userId }).sort({ date: -1 }); // Sort by date (most recent)
