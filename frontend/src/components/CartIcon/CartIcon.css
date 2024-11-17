@@ -1,0 +1,50 @@
+/* Fixed cart logo at the bottom left */
+.cart-icon {
+  position: fixed;
+  bottom: 20px; /* Adjust for spacing from the bottom */
+  right: 40px;   /* Adjust for spacing from the left */
+  z-index: 1000; /* Ensures it's above other elements */
+  cursor: pointer;
+  width: 70px; /* Adjust size of the cart icon */
+  height: 70px; /* Adjust size of the cart icon */
+  background-color: tomato; /* Customize the background color */
+  border-radius: 50%; /* Makes it circular */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Optional: Add shadow */
+  transition: 0.3s ease;
+}
+
+
+
+.cart-icon img {
+  width: 35px; /* Adjust icon size */
+  height: 35px;
+}
+
+/* Badge for cart items */
+.cart-item-count {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: tomato;
+  color: white;
+  font-size: 12px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart-text{
+  position: fixed;
+  right: 100px;
+  width: 150px;
+  background-color: tomato;
+  padding: 8px;
+  bottom: 35px;
+  border-radius: 5px;
+}
