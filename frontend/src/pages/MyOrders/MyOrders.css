@@ -1,30 +1,43 @@
-.my-orders{
+.my-orders {
   margin: 50px 0px;
 }
 
-.my-orders .container{
+.my-orders .container {
   display: flex;
   flex-direction: column;
   gap: 20px;
   margin-top: 30px;
 }
 
-.my-orders-order{
+.my-orders-order {
   display: grid;
   grid-template-columns: 0.5fr 2fr 1fr 1fr 2fr 1fr;
   align-items: center;
   gap: 30px;
   font-size: 14px;
-  padding: 10px 20px;
+  padding: 15px 20px;
   color: #454545;
   border: 1px solid tomato;
+  border-radius: 8px; /* Add rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
-.my-orders-order img{
+.my-orders-order img {
   width: 50px;
 }
 
-.my-orders-order p span{
+.my-orders-order p {
+  margin: 5px 0;
+}
+
+/* Highlight Order ID */
+.my-orders-order p:first-of-type {
+  font-weight: bold;
+  color: #ff6347; /* Highlight the order ID in tomato color */
+  font-size: 16px; /* Slightly larger font */
+}
+
+.my-orders-order p span {
   color: tomato;
 }
 
@@ -33,22 +46,39 @@
   color: #454545;
 }
 
-.my-orders-order button{
+.my-orders-order button {
   border: none;
   padding: 12px 0px;
   border-radius: 4px;
-  background-color:#ffe1e1;
+  background-color: #ffe1e1;
   cursor: pointer;
   color: #454545;
+  transition: background-color 0.3s, color 0.3s; /* Add hover effect */
 }
 
-@media (max-width:900px) {
-    .my-orders-order{
-      grid-template-columns: 1fr 2fr 1fr;
-      row-gap: 5px;
-      font-size: 12px;
-    }
-    .my-orders-order button{
-      font-size: 10px;
-    }
+.my-orders-order button:hover {
+  background-color: tomato;
+  color: #fff;
+}
+
+@media (max-width: 900px) {
+  .my-orders-order {
+    grid-template-columns: 1fr;
+    row-gap: 10px;
+    font-size: 12px;
+    text-align: center; /* Center-align content for smaller screens */
+  }
+
+  .my-orders-order img {
+    margin: 0 auto; /* Center the image */
+  }
+
+  .my-orders-order button {
+    font-size: 12px;
+    padding: 10px 0;
+  }
+
+  .my-orders-order p:first-of-type {
+    font-size: 14px; /* Adjust Order ID size for smaller screens */
+  }
 }

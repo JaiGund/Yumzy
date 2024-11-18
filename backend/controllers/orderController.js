@@ -4,7 +4,12 @@ import userModel from "../models/userModel.js";
 //placing user order for frontend.
 const placeOrder = async (req, res) => {
   try {
+
+    const orderCount = await orderModel.countDocuments();
+    const newOrderId = orderCount + 1;
+
     const newOrder = new orderModel({
+      orderId:newOrderId,
       userId: req.body.userId,
       items: req.body.items,
       amount: req.body.amount,
