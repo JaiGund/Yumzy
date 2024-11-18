@@ -10,4 +10,4 @@ orderRouter.get('/list',listOrders);
 orderRouter.post('/status',updateStatus);
 orderRouter.get('/get-address', authMiddleware, getUserAddress);
 
-export default orderRouter; 
+export default orderRouter;
