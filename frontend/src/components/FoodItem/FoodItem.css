@@ -72,3 +72,22 @@
 .food-item-counter img{
   width: 30px;
 }
+
+.quantity-input {
+  width: 40px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.food-item-counter input.food-item-quantity {
+  width: 40px;
+  height: 25px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin: 0 8px;
+  font-size: 16px;
+}
+

@@ -87,7 +87,7 @@ const StoreContextProvider = (props) => {
     localStorage.setItem("token", tokenValue);
     localStorage.setItem("tokenExpiry", expiryTime.toString());
     setToken(tokenValue);
-    setCartItems({});
+    setCartItems({}); 
   };
 
   // Check if token is expired
