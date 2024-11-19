@@ -25,10 +25,10 @@ const PlaceOrder = () => {
   // Fetch saved user address
   useEffect(() => {
     const fetchUserAddress = async () => {
-      if (!token) {
-        navigate('/cart');
-        return;
-      }
+      // if (!token) {
+      //   navigate('/cart');
+      //   return;
+      // }
 
       try {
         const response = await axios.get(`${url}/api/orders/get-address`, {
@@ -61,39 +61,6 @@ const PlaceOrder = () => {
     }));
   };
 
-  const placeOrder = async (event) => {
-    event.preventDefault();
-    let orderItems = [];
-    food_list.forEach((item) => {
-      if (cartItems[item._id] > 0) {
-        let itemInfo = { ...item, quantity: cartItems[item._id] };
-        orderItems.push(itemInfo);
-      }
-    });
-
-    const orderData = {
-      address: data,
-      items: orderItems,
-      amount: getTotalCartAmount() + 2,
-    };
-
-    try {
-      const response = await axios.post(`${url}/api/orders/place`, orderData, {
-        headers: { token },
-      });
-
-      if (response.data.success) {
-        alert('Payment Successful');
-        setCartItems({});
-        navigate('/myorders');
-      } else {
-        alert('Error placing order');
-      }
-    } catch (error) {
-      console.error("Error placing order:", error);
-      alert('Error');
-    }
-  };
 
   // Redirect if token or cart is empty
   useEffect(() => {
@@ -106,8 +73,30 @@ const PlaceOrder = () => {
     return <p>Loading...</p>; // Show a loading indicator while fetching data
   }
 
+  const proceedToPayment = (event) => {
+    event.preventDefault();
+
+    // Gather order details
+    let orderItems = [];
+    food_list.forEach((item) => {
+      if (cartItems[item._id] > 0) {
+        orderItems.push({ ...item, quantity: cartItems[item._id] });
+      }
+    });
+
+    const orderDetails = {
+      address: data,
+      items: orderItems,
+      amount: getTotalCartAmount() + 2,
+    };
+
+    // Navigate to the payment page with order details
+    navigate('/payment', { state: { orderDetails } });
+  };
+
+
   return (
-    <form className="place-order" onSubmit={placeOrder}>
+    <form className="place-order" onSubmit={proceedToPayment}>
       <div className="place-order-left">
         <p className="title">Delivery Information</p>
         <div className="multi-fields">
