@@ -39,7 +39,7 @@ const PaymentPage = () => {
     <div className="payment-page">
       <header className="payment-header">
         <img
-          src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Google_Pay_Logo_%282018-2020%29.svg"
+          src="https://i.pinimg.com/564x/8d/ec/e1/8dece15cc40aaf66ed47f6591b639d06.jpg"
           alt="Google Pay Logo"
           className="gpay-logo"
         />
