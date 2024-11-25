@@ -5,9 +5,9 @@ import { storeContext } from "../../context/StoreContext";
 import { toast } from 'react-toastify'
 
 const FoodItem = ({ id, name, price, description, image }) => {
-  const {cartItems,addToCart,removeFromCart,url} = useContext(storeContext)
+  const {cartItems, addToCart, removeFromCart, url} = useContext(storeContext)
 
-  return (  
+  return (
     <div className="food-item">
       <div className="food-item-img-container">
         <img className="food-item-image" src={url+'/images/'+image} alt="" />
