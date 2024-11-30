@@ -83,7 +83,7 @@ const StoreContextProvider = (props) => {
 
   // Set token with expiry logic
   const setTokenWithExpiry = (tokenValue) => {
-    const expiryTime = Date.now() + 5 * 60 * 1000; // 5 minutes
+    const expiryTime = Date.now() + 60 * 60 * 1000; // 50 minutes
     localStorage.setItem("token", tokenValue);
     localStorage.setItem("tokenExpiry", expiryTime.toString());
     setToken(tokenValue);
